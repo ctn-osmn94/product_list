@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    gap: 30px;
+    max-width: 1280px;
+    margin: auto;
+   
+}
+
+.categori-title {
+    width: 15%;
+    list-style: none;
+    gap: 40px;
+}
+
+.categori-title li {
+    padding: 15px;
+}
+
+.categori-title li:hover{
+    transition: .5s;
+    background: #dbeafe;
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+}
+
+.products ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    list-style: none;
+    background: #e4e4e7;
+}
+
+.products li {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}

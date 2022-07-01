@@ -6,13 +6,13 @@ let userProducts = document.getElementById("user-products")
         const products = data.responses[0][0].params.recommendedProducts
         console.log(products);
         getUserCategories(userCategories,products)
+        getSizeOzel(products)
     })
     let count = 0
     function getUserCategories(userCategories,products) {
         count++
         userCategories.map(userCategori => {
             const categori = document.createElement("li")
-            categori.className = "hover:bg-blue-100  p-3 cursor-pointer"
             categori.innerHTML = userCategori
             categories.appendChild(categori)
             categori.addEventListener("click", () => {
@@ -39,7 +39,7 @@ let userProducts = document.getElementById("user-products")
         
     }
 
-    let contentProduct = document.getElementById("content-product")
+        
 
     function getSizeOzel(products) {
         userProducts.innerHTML = ""
@@ -55,6 +55,8 @@ let userProducts = document.getElementById("user-products")
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
             userProducts.append(contentProduct)
+            productImage.className = "w-full"
+            
         }
 
     }
