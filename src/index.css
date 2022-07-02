@@ -1,7 +1,8 @@
-body {
+* {
     margin: 0;
     padding: 0;
-}
+  }
+
 
 .container {
     width: 100%;
@@ -36,23 +37,24 @@ body {
     gap: 20px;
 }
 
-.products ul {
+.products div {
+    gap: 15px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
     border-radius: 10px;
     margin: 0;
-    padding: 20px;
     width: 100%;
-    list-style: none;
     background: #e4e4e7;
 }
 
-.products li {
+.products p {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
     overflow: hidden;
 }
+
+.products img {
+    border-radius: 10px;
+    width: 100%;
+}
+
