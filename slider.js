@@ -2,7 +2,6 @@ const settings = {
     slidesToShow: 5,
     slidesToScroll: 3,
     infinite: true,
-    dots: true,
     responsive: [
         {
             breakpoint: 1024,
@@ -35,12 +34,16 @@ const settings = {
 
 
 export function sliderInit() {
-    const sl =  $('.slider').slick(settings);
+    
+    let sl =  $('.slider').slick(settings);
         
     $(window).on('resize', function() {
-    if( !sl.hasClass('.slick-initialized') ) {
+        if( !sl.hasClass('.slick-initialized') ) {
             $('.slider').slick(settings);
-    }
+        }else if(sl.hasClass('.slick-initialized')) {
+            sl.removeClass('.slick-initialized')
+        }
+
     }); 
 }
 

@@ -32,18 +32,16 @@
     cursor: pointer;
 }
 
-.products {
-    display: flex;
-    gap: 20px;
-}
 
-.products div {
-    gap: 15px;
+
+.slick-slide {
+    margin: 15px;
     text-align: center;
     border-radius: 10px;
-    margin: 0;
     width: 100%;
-    background: #e4e4e7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .products p {
@@ -51,6 +49,14 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+}
+
+.price {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 10px;
+    background: #e5e7eb;
+    border-radius: 8px;
 }
 
 .products img {

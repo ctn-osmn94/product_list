@@ -204,10 +204,9 @@
 }
 
 body {
-    background: grey;
     margin: 50px;
 }
 
 .slider {
-    width: 1280px;
+    width: 100%;
 }

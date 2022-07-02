@@ -15,27 +15,37 @@ let userProducts = document.getElementById("user-products")
             categori.innerHTML = userCategori
             categories.appendChild(categori)
             categori.addEventListener("click", () => {
+                if (userProducts.classList.contains('slick-initialized')) {
+                    userProducts.classList.remove('slick-initialized')
+                }
                 if (userCategori == "Size Özel") {
+                    
                     getSizeOzel(products)
                     sliderInit()
                 }
                 if(userCategori == "Yapı Market & Tamirat > Tamir, Tadilat Gereçleri") {
+                    
                     getTamirTadilat(products)
                     sliderInit()
+                    
                 }
                 if(userCategori == "Ev, Dekorasyon, Bahçe > Mobilya") {
+                    
                     getMobilya(products)
                     sliderInit()
                 }
                 if(userCategori == "Kozmetik & Kişisel Bakım > Sağlık, Medikal") {
+                    
                     getMedical(products)
                     sliderInit()
                 }
                 if(userCategori == "Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)") {
+                    
                     getLaptop(products)
                     sliderInit()
                 }
                 if(userCategori == "Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi") {
+                    
                     getStuff(products)
                     sliderInit()
                 }
@@ -55,6 +65,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Size Özel"][i].image
             productName.innerHTML = products["Size Özel"][i].name
             productPrice.innerHTML = products["Size Özel"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -73,6 +84,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Yapı Market & Tamirat > Tamir, Tadilat Gereçleri"][i].image
             productName.innerHTML = products["Yapı Market & Tamirat > Tamir, Tadilat Gereçleri"][i].name
             productPrice.innerHTML = products["Yapı Market & Tamirat > Tamir, Tadilat Gereçleri"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -90,6 +102,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Ev, Dekorasyon, Bahçe > Mobilya"][i].image
             productName.innerHTML = products["Ev, Dekorasyon, Bahçe > Mobilya"][i].name
             productPrice.innerHTML = products["Ev, Dekorasyon, Bahçe > Mobilya"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -108,6 +121,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].image
             productName.innerHTML = products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].name
             productPrice.innerHTML = products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -126,6 +140,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].image
             productName.innerHTML = products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].name
             productPrice.innerHTML = products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -144,6 +159,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].image
             productName.innerHTML = products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].name
             productPrice.innerHTML = products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].priceText
+            productPrice.className = "price"
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
