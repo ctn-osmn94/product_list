@@ -5,14 +5,14 @@
 
 
 .container {
-    width: 100%;
+    max-width: 1280px;
+    margin: auto;
 }
 
 .main {
     display: flex;
     gap: 30px;
-    max-width: 1280px;
-    margin: auto;
+    
     align-items: center;
    
 }
@@ -34,10 +34,10 @@
 }
 
 
-
 .slick-slide {
+    height: inherit !important;
     cursor: pointer;
-    margin: 15px;
+    margin:15px;
     text-align: center;
     border-radius: 10px;
     width: 100%;
@@ -47,9 +47,6 @@
 }
 
 .slick-slide:hover .add-button{
-    font-size: larger;
-    width: 100%;
-    padding: 10px;
     visibility: visible;
 }
 
@@ -74,16 +71,54 @@
 }
 
 .add-button {
+    font-size: larger;
+    width: 100%;
+    padding: 10px;
     margin-top: 0px;
-    font-size: 0px;
     padding: 10px 0px 10px 0px;
-    transition: .3s;
     cursor: pointer;
-    visibility: hidden;
     background: #60a5fa;
     border-style: none;
-    width: 0%;
     color: white;
     border-radius: 8px;
+    visibility: hidden;
 }
 
+/*................ popup ..................*/
+.popup-container {
+    display: flex;
+    justify-content: center;
+}
+
+#popup {
+    gap: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 10px;
+    right: 60px;
+}
+
+#popup-icon {
+    color: white;
+    padding: 10px;
+    background: lawngreen;
+    font-size: 20px;
+    border-radius: 50%;
+    font-size: x-large;
+}
+
+.popup-text1 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
+
+.popup-text2 {
+    color: #bfdbfe;
+    font-size: x-large;
+    font-weight: bold;
+}

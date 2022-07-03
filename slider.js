@@ -43,9 +43,7 @@ const settings = {
 
 
 export function sliderInit() {
-    
     let sl =  $('.slider').slick(settings);
-        
     $(window).on('resize', function() {
         if( !sl.hasClass('.slick-initialized') ) {
             $('.slider').slick(settings);
