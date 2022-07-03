@@ -2,7 +2,16 @@ const settings = {
     slidesToShow: 5,
     slidesToScroll: 3,
     infinite: true,
+    lazyLoad: 'ondemand',
     responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3,
+                infinite: true,
+            }
+        },
         {
             breakpoint: 1024,
             settings: {
