@@ -47,7 +47,7 @@ export function sliderInit() {
                   arrows:false
           });
         } 
-    }, 500);
+    }, 100);
 
 
 

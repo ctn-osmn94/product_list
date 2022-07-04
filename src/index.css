@@ -173,8 +173,6 @@ body {
 
     #categories {
         width: 100%;
-        display: flex;
-        align-items: flex-end;
     }
 
     #categories .slick-track {
@@ -182,6 +180,7 @@ body {
     }
 
     .categori-title li {
+        border-bottom: #e5e7eb 3px solid;
         text-align: center;
         padding: 0px;
     }
