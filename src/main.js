@@ -7,12 +7,20 @@ let userProducts = document.getElementById("user-products")
         const products = data.responses[0][0].params.recommendedProducts
         console.log(products);
         getUserCategories(userCategories,products)
+        getSizeOzel(products)
+        sliderInit()
     })
     function getUserCategories(userCategories,products) {
         userCategories.map(userCategori => {
             const categori = document.createElement("li")
             categori.className = "categori"
-            categori.innerHTML = userCategori
+
+            if (userCategori.includes(">")) {
+                categori.innerHTML = userCategori.split('>')[1]
+            } else {
+                categori.innerHTML = userCategori
+            }
+
             categories.appendChild(categori)
             categori.addEventListener("click", () => {
                 if (userProducts.classList.contains('slick-initialized')) {
@@ -71,6 +79,8 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -83,7 +93,6 @@ let userProducts = document.getElementById("user-products")
             } else {
                 freeShipping.style.listStyle = "none"
             }
-
             
             button.addEventListener("click", () => {
                 document.getElementById("popup").style.display = "flex"
@@ -92,8 +101,6 @@ let userProducts = document.getElementById("user-products")
                 }, 2000);
                 
             })
-         
-
 
         }
     }
@@ -107,6 +114,7 @@ let userProducts = document.getElementById("user-products")
             const button = document.createElement("button")
             const freeShipping = document.createElement("li")
             const contentProduct = document.createElement("div")
+
             productImage.src = products["Yapı Market & Tamirat > Tamir, Tadilat Gereçleri"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Yapı Market & Tamirat > Tamir, Tadilat Gereçleri"][i].name
@@ -114,6 +122,8 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -125,6 +135,14 @@ let userProducts = document.getElementById("user-products")
             } else {
                 freeShipping.style.listStyle = "none"
             }
+
+            button.addEventListener("click", () => {
+                document.getElementById("popup").style.display = "flex"
+                setTimeout(() => {
+                    document.getElementById("popup").style.display = "none" 
+                }, 2000);
+                
+            })
         }
 
         
@@ -139,6 +157,7 @@ let userProducts = document.getElementById("user-products")
             const button = document.createElement("button")
             const freeShipping = document.createElement("li")
             const contentProduct = document.createElement("div")
+
             productImage.src = products["Ev, Dekorasyon, Bahçe > Mobilya"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Ev, Dekorasyon, Bahçe > Mobilya"][i].name
@@ -146,6 +165,8 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
@@ -157,6 +178,14 @@ let userProducts = document.getElementById("user-products")
             } else {
                 freeShipping.style.listStyle = "none"
             }
+
+            button.addEventListener("click", () => {
+                document.getElementById("popup").style.display = "flex"
+                setTimeout(() => {
+                    document.getElementById("popup").style.display = "none" 
+                }, 2000);
+                
+            })
 
         }
 
@@ -172,6 +201,7 @@ let userProducts = document.getElementById("user-products")
             const button = document.createElement("button")
             const freeShipping = document.createElement("li")
             const contentProduct = document.createElement("div")
+
             productImage.src = products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].name
@@ -179,17 +209,28 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
             contentProduct.appendChild(freeShipping)
             contentProduct.appendChild(button)
             userProducts.append(contentProduct)
+
             if (products["Kozmetik & Kişisel Bakım > Sağlık, Medikal"][i].params.shippingFee == "FREE") {
                 freeShipping.innerHTML = "Ücretsiz Kargo"
             } else {
                 freeShipping.style.listStyle = "none"
-            }        
+            }
+            
+            button.addEventListener("click", () => {
+                document.getElementById("popup").style.display = "flex"
+                setTimeout(() => {
+                    document.getElementById("popup").style.display = "none" 
+                }, 2000);
+                
+            })
         }
 
         
@@ -204,6 +245,7 @@ let userProducts = document.getElementById("user-products")
             const button = document.createElement("button")
             const freeShipping = document.createElement("li")
             const contentProduct = document.createElement("div")
+
             productImage.src = products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].name
@@ -211,17 +253,28 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
             contentProduct.appendChild(freeShipping)
             contentProduct.appendChild(button)
             userProducts.append(contentProduct)
+
             if (products["Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)"][i].params.shippingFee == "FREE") {
                 freeShipping.innerHTML = "Ücretsiz Kargo"
             }  else {
-                freeShipping.style.listStyle = "none"
-            }       
+                freeShipping.style.visibility = "hidden"
+            }
+            
+            button.addEventListener("click", () => {
+                document.getElementById("popup").style.display = "flex"
+                setTimeout(() => {
+                    document.getElementById("popup").style.display = "none" 
+                }, 2000);
+                
+            })
         }
 
         
@@ -236,6 +289,7 @@ let userProducts = document.getElementById("user-products")
             const button = document.createElement("button")
             const freeShipping = document.createElement("li")
             const contentProduct = document.createElement("div")
+
             productImage.src = products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].name
@@ -243,17 +297,28 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            contentProduct.className = "category-slider"
+
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
             contentProduct.appendChild(productPrice)
             contentProduct.appendChild(freeShipping)
             contentProduct.appendChild(button)
             userProducts.append(contentProduct)
+
             if (products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"][i].params.shippingFee == "FREE") {
                 freeShipping.innerHTML = "Ücretsiz Kargo"
             }  else {
                 freeShipping.style.listStyle = "none"
-            }       
+            } 
+            
+            button.addEventListener("click", () => {
+                document.getElementById("popup").style.display = "flex"
+                setTimeout(() => {
+                    document.getElementById("popup").style.display = "none" 
+                }, 2000);
+                
+            })
         }
 
         

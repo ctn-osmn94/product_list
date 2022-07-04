@@ -1,30 +1,36 @@
 * {
     margin: 0;
     padding: 0;
+    min-height: 0;
+    min-width: 0;
   }
 
+body {
+    width: 100%;
+    height: 100vh;
+}
 
 .container {
-    max-width: 1280px;
-    margin: auto;
+    padding: 60px;
+}
+
+.title {
+    padding: 15px;
 }
 
 .main {
     display: flex;
     gap: 30px;
-    
-    align-items: center;
-   
 }
 
 .categori-title {
-    width: 15%;
+    margin-top: 15px;
     list-style: none;
-    gap: 40px;
 }
 
 .categori-title li {
     padding: 15px;
+    width: 200px;
 }
 
 .categori-title li:hover{
@@ -34,16 +40,15 @@
 }
 
 
-.slick-slide {
-    height: inherit !important;
+.category-slider {
+    margin: 15px;
     cursor: pointer;
-    margin:15px;
     text-align: center;
     border-radius: 10px;
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow: 1px 1px 12px 5px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .slick-slide:hover .add-button{
@@ -121,4 +126,52 @@
     color: #bfdbfe;
     font-size: x-large;
     font-weight: bold;
+}
+
+/*................ responsive ..................*/
+
+@media (max-width: 769px) {
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .main {
+        display: block;
+    }
+
+    #categories {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    #categories .slick-track {
+        height: 30px;
+    }
+
+    .categori-title li {
+        text-align: center;
+        padding: 0px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
+    .categori-title li:hover {
+        background: none;
+        border-bottom: #60a5fa 3px solid;
+        transition: none;
+    }
+
+    
+    .add-button {
+        visibility: visible;
+    }
+
+    #popup {
+        width: 100%;
+    }
 }

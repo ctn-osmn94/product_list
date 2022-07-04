@@ -27,8 +27,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -67,11 +67,11 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 40px;
     line-height: 1;
 
     opacity: .75;
-    color: white;
+    color: #94a3b8;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -97,7 +97,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: -15px;
 }
 [dir='rtl'] .slick-next
 {
@@ -201,11 +201,6 @@
 {
     opacity: .75;
     color: black;
-}
-
-body {
-    background: antiquewhite;
-    margin: 50px;
 }
 
 .slider {
