@@ -23,7 +23,7 @@
     line-height: 0;
 
     position: absolute;
-    top: 50%;
+    top: 35%;
 
     display: block;
 
@@ -97,7 +97,7 @@
 
 .slick-next
 {
-    right: -15px;
+    right: -20px;
 }
 [dir='rtl'] .slick-next
 {

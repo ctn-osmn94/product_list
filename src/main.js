@@ -11,49 +11,49 @@ let userProducts = document.getElementById("user-products")
         sliderInit()
     })
     function getUserCategories(userCategories,products) {
-        userCategories.map(userCategori => {
-            const categori = document.createElement("li")
-            categori.className = "categori"
+        userCategories.map(userCategory => {
+            const category = document.createElement("li")
+            category.className = "category"
 
-            if (userCategori.includes(">")) {
-                categori.innerHTML = userCategori.split('>')[1]
+            if (userCategory.includes(">")) {
+                category.innerHTML = userCategory.split('>')[1]
             } else {
-                categori.innerHTML = userCategori
+                category.innerHTML = userCategory
             }
 
-            categories.appendChild(categori)
-            categori.addEventListener("click", () => {
+            categories.appendChild(category)
+            category.addEventListener("click", () => {
                 if (userProducts.classList.contains('slick-initialized')) {
                     userProducts.classList.remove('slick-initialized')
                 }
-                if (userCategori == "Size Özel") {
+                if (userCategory == "Size Özel") {
                     getSizeOzel(products)
                     sliderInit()
                 }
-                if(userCategori == "Yapı Market & Tamirat > Tamir, Tadilat Gereçleri") {
+                if(userCategory == "Yapı Market & Tamirat > Tamir, Tadilat Gereçleri") {
                     
                     getTamirTadilat(products)
                     sliderInit()
                     
                 }
-                if(userCategori == "Ev, Dekorasyon, Bahçe > Mobilya") {
+                if(userCategory == "Ev, Dekorasyon, Bahçe > Mobilya") {
                     
                     getMobilya(products)
                     sliderInit()
                 }
-                if(userCategori == "Kozmetik & Kişisel Bakım > Sağlık, Medikal") {
+                if(userCategory == "Kozmetik & Kişisel Bakım > Sağlık, Medikal") {
                     
                     getMedical(products)
                     sliderInit()
                 }
-                if(userCategori == "Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)") {
+                if(userCategory == "Bilgisayar, Tablet > Dizüstü Bilgisayar (Laptop)") {
                     
                     getLaptop(products)
                     sliderInit()
                 }
-                if(userCategori == "Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi") {
+                if(userCategory == "Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi") {
                     
-                    getStuff(products)
+                    getIsıtmaSogutma(products)
                     sliderInit()
                 }
                 
@@ -75,6 +75,7 @@ let userProducts = document.getElementById("user-products")
             productImage.src = products["Size Özel"][i].image
             productImage.setAttribute("data-lazy", productImage.src)
             productName.innerHTML = products["Size Özel"][i].name
+            productName.className = "product-name"
             productPrice.innerHTML = products["Size Özel"][i].priceText
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
@@ -98,7 +99,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
 
@@ -122,6 +123,7 @@ let userProducts = document.getElementById("user-products")
             productPrice.className = "price"
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
+            productName.className = "product-name"
             contentProduct.className = "category-slider"
 
             contentProduct.appendChild(productImage)
@@ -140,7 +142,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
         }
@@ -166,6 +168,7 @@ let userProducts = document.getElementById("user-products")
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
             contentProduct.className = "category-slider"
+            productName.className = "product-name"
 
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
@@ -183,7 +186,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
 
@@ -210,6 +213,7 @@ let userProducts = document.getElementById("user-products")
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
             contentProduct.className = "category-slider"
+            productName.className = "product-name"
 
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
@@ -228,7 +232,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
         }
@@ -254,6 +258,7 @@ let userProducts = document.getElementById("user-products")
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
             contentProduct.className = "category-slider"
+            productName.className = "product-name"
 
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
@@ -272,7 +277,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
         }
@@ -280,7 +285,7 @@ let userProducts = document.getElementById("user-products")
         
     }
 
-    function getStuff(products) {
+    function getIsıtmaSogutma(products) {
         userProducts.innerHTML = ""
         for (let i = 0; i < products["Beyaz Eşya & Küçük Ev Aletleri > Isıtma, Soğutma Sistemi"].length; i++) {
             const productImage = document.createElement("img")
@@ -298,6 +303,7 @@ let userProducts = document.getElementById("user-products")
             button.innerHTML = "Sepete Ekle"
             button.className = "add-button"
             contentProduct.className = "category-slider"
+            productName.className = "product-name"
 
             contentProduct.appendChild(productImage)
             contentProduct.appendChild(productName)
@@ -316,7 +322,7 @@ let userProducts = document.getElementById("user-products")
                 document.getElementById("popup").style.display = "flex"
                 setTimeout(() => {
                     document.getElementById("popup").style.display = "none" 
-                }, 2000);
+                }, 1200);
                 
             })
         }
